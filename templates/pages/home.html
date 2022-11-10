@@ -1,0 +1,62 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur{% endblock %}
+{% block content %}
+<div class="row">
+	<div class="home_menu">
+		<h1>Fyyur 🔥</h1>
+		<p class="lead">Where musical artists meet musical venues.</p>
+		<h3>
+			<a href="/venues"><button class="btn btn-default btn-lg">Find a venue</button></a>
+			<a href="/venues/create"><button class="btn btn-default btn-lg">Post a venue</button></a>
+		</h3>
+		<h3>
+			<a href="/artists"><button class="btn btn-default btn-lg">Find an artist</button></a>
+			<a href="/artists/create"><button class="btn btn-default btn-lg">Post an artist</button></a>
+		</h3>
+		<p class="lead">Publicize about your show for free.</p>
+		<h3>
+			<a href="/shows/create"><button class="btn btn-default btn-lg">Post a show</button></a>
+		</h3>
+	</div>
+
+	<div class="recent_row">
+		<div class="home_artist">
+			<p> Popular Artist  </p>
+			{%for show in shows  %}
+			<div class="recent_artist"> 
+				<div class="recent_artist_container">
+					<div>
+						<a href="/artists/{{ show.artist_id}}">
+							<img src="{{show.artist_image_link}}" alt="Artist Image" />
+							<p> {{ show.artist_name }}  {{ show.artist_state }} </p>
+						</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="home_venue">
+			<p> Popular Venue</p>
+			{%for show in shows %}
+			<div class="recent_venue">
+				<div class="recent_venue_container">
+					<div>
+						<a href="/venues/{{ show.venue_id }}">
+							<img src="{{ show.venue_image_link }}" alt="Venue Image" />
+							<p> {{ show.venue_name }}  {{ show.venue_state}} </p>
+						</a>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	
+</div>
+<div id="img_home">
+	<img id="front-splash" src="{{ url_for('static',filename='img/artist.png') }}" alt="Front Photo of Musical Band" />
+	<img id="radio_preview" src="{{ url_for('static',filename='img/radio_previewkh.gif') }}" alt="Musical Band" />
+</div>
+
+
+{% endblock %}

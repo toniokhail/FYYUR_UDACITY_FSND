@@ -1,0 +1,102 @@
+h1 {
+	margin-bottom: 1em;
+}
+@keyframes rainbow-background {
+    0% { background-color: #d88e8e41; }
+    8.333% { background-color:  #a7998c4b; }
+    16.667% { background-color: #a0a0815e; }
+    25.000% { background-color: #8f9c8459; }
+    33.333% { background-color: #748d744f; }
+    41.667% { background-color: #b3cfc142; }
+    50.000% { background-color: #fdffff46; }
+    58.333% { background-color: #8293a53a; }
+    66.667% { background-color: #84849c4b; }
+    75.000% { background-color: rgba(144, 134, 155, 0.282); }
+    83.333% { background-color: rgba(161, 137, 161, 0.329); }
+    91.667% { background-color: #998d9344; }
+    100.00% { background-color: #a58b8b46; }
+    }
+.recent_row{
+	background: rgba(96, 125, 139, 0.1);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 5px;
+	padding: 20px;
+	position: unset;
+	top: 100px;
+	margin-left: 75%;
+	box-shadow: -7px -7px 5px  rgba(255, 255, 255, 0.4), 
+	7px 7px 5px  rgba(0, 0, 0, 0.2);
+	animation: rainbow-background 20s infinite;
+}
+
+
+.recent_row div p{
+	color: rgba(255, 103, 35, 1.00);
+	font-weight: bold;
+	margin: 0 10px 0 10px;
+}
+
+.recent_row div p{
+	justify-content: center;
+}
+
+.recent_artist_container, .recent_venue_container{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-flow: column;
+	border-radius: 5px;
+	margin: 10px 10px 10px 10px;
+	padding: 6px;
+	box-shadow: -7px -7px 5px  rgba(255, 255, 255, 0.3), 
+	7px 7px 5px  rgba(0, 0, 0, 0.2);
+}
+
+.recent_artist_container img, .recent_venue_container img{
+	align-self: center;
+	width: 100px;
+	height: 90px;
+	border-radius: 50%;
+}
+
+.recent_artist_container  a p, .recent_venue_container a p{
+	display: flex;
+	text-align: center;
+	color: rgba(63, 81, 181, 1.00);
+	font-size: 13px;
+	font-weight: lighter;
+}
+
+#img_home{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	flex-flow: column;
+	top: 120px;
+	left: 37%;
+}
+
+#front-splash{
+	margin-top: 100px;
+	height: 250px;
+	width: auto;
+	border-radius: 30px;
+	box-shadow: -7px -7px 5px  rgba(255, 255, 255, 0.4), 
+	7px 7px 5px  rgba(0, 0, 0, 0.3);
+}
+
+#radio_preview{
+	border-radius: 50px;
+	width: 70%;
+	height: auto;
+	margin-top: 7px;
+	box-shadow: -7px -7px 5px  rgba(255, 255, 255, 0.4), 
+	7px 7px 5px  rgba(0, 0, 0, 0.3);
+}
+
+.home_menu{
+	position: absolute;
+	left: 50px;
+}

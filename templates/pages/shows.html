@@ -1,0 +1,38 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Fyyur | Shows{% endblock %}
+{% block content %}
+<div class="row shows">
+    {%for show in shows %}
+    <div class>
+        <div class="tile tile-show">
+            <img src="{{show.artist_image_link}}" alt="Artist Image" />
+            <h4>{{ show.start_time|datetime('full') }}</h4>
+            <h5><a href="/artists/{{ show.artist_id }}">{{ show.artist_name }}</a></h5>
+            <p>playing at</p>
+            <h5><a href="/venues/{{ show.venue_id }}">{{ show.venue_name }}</a></h5>
+
+            <a href="/shows/{{show.venue_id}}/edit"><button class="btn btn-primary btn-lg">Edit</button></a>
+
+            <button id="delete_show" onclick="del_Show(event)" class="btn btn-primary btn-lg"
+        data-id="{{ show.venue_id }}">Delete</button>
+        </div>
+        
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+	function del_Show(e) {
+		const id = e.target.dataset.id
+		fetch(`/shows/${id}`, {
+			method: 'DELETE'
+		 })
+		.then(response => {
+			window.location.href = response.url;
+		})
+		.catch(error => {
+			console.log(error);
+				})
+			}
+</script>
+{% endblock %}
